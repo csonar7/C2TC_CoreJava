@@ -5,7 +5,7 @@ import java.awt.Button;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+//type 1
 public class AppletPart1 extends Applet implements ActionListener{
 	/**
 	 * 
