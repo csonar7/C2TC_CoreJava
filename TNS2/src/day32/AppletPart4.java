@@ -6,7 +6,7 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+//type 4
 public class AppletPart4 extends Applet{
 	/**
 	 * 

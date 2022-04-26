@@ -36,5 +36,6 @@ public class Frame5 extends Frame {
 		// TODO Auto-generated method stub
 		new Frame5();
 	}
+//	
 
 }

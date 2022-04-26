@@ -7,10 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 //type 1
 public class AppletPart1 extends Applet implements ActionListener{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	
 	Button b1,b2,b3;
 	TextField t;
 	public void init()

@@ -1,4 +1,4 @@
-package day40;
+package day41;
 
 class Animal {
 

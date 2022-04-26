@@ -4,7 +4,7 @@ import java.applet.Applet;
 import java.awt.Button;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
-
+//type 5
 //Lamda Expression
 
 public class AppletPart5 extends Applet{
@@ -16,7 +16,7 @@ public class AppletPart5 extends Applet{
 	TextField t;
 	public void init()
 	{
-		add(b1=new Button("click"));
+		add(b1=new Button("Click"));
 		add(t=new TextField(15));
 		add(b2=new Button("Clear"));
 		b1.addActionListener((ActionEvent e) -> {t.setText("We perform Lamda Expression");});
