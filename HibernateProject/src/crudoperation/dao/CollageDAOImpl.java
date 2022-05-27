@@ -1,8 +1,16 @@
 package crudoperation.dao;
 
+/*import java.util.List;
+import java.util.OptionalDouble;
+import java.util.stream.Stream;
+*/
 import javax.persistence.EntityManager;
+//import javax.persistence.Query;
+//import javax.persistence.TypedQuery;
+
 
 import crudoperation.entities.Collage;
+
 
 public class CollageDAOImpl implements CollageDAO{
 	private EntityManager em;
@@ -33,7 +41,7 @@ public class CollageDAOImpl implements CollageDAO{
 	public void removeCollage(Collage cg) {
 		em.remove(cg);		
 	}
-
+	
 	@Override
 	public void commitTrasaction() {
 		em.getTransaction().commit();

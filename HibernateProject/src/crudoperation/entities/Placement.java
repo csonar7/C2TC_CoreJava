@@ -1,6 +1,7 @@
 package crudoperation.entities;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -17,11 +18,11 @@ public class Placement implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private long placeId;
+	private int placeId;
 	private String pname;
 	private String qualification;
 	private int year;
-	private String date;
+	private LocalDate date;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="Collage_ID")
@@ -31,18 +32,19 @@ public class Placement implements Serializable{
 		
 	}
 	
-	public Placement(long placeId, String pname, String qualification, int year, String date) {
+	public Placement(int placeId, String pname, String qualification, int year, LocalDate date,Collage collage) {
 		this.placeId = placeId;
 		this.pname = pname;
 		this.qualification = qualification;
 		this.year = year;
 		this.date = date;
+		this.collage=collage;
 	}
-	public long getPlaceId() 
+	public int getPlaceId() 
 	{
 		return placeId;
 	}
-	public void setPlaceId(long placeId) 
+	public void setPlaceId(int placeId) 
 	{
 		this.placeId = placeId;
 	}
@@ -71,11 +73,11 @@ public class Placement implements Serializable{
 		this.year = year;
 	}
 	
-	public String getDate()
+	public LocalDate getDate()
 	{
 		return date;
 	}
-	public void setDate(String date) 
+	public void setDate(LocalDate date) 
 	{
 		this.date = date;
 	}

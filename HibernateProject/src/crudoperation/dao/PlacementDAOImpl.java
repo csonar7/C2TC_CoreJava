@@ -1,6 +1,9 @@
 package crudoperation.dao;
 
+
+
 import javax.persistence.EntityManager;
+
 
 import crudoperation.entities.Placement;
 
@@ -34,7 +37,7 @@ public class PlacementDAOImpl implements PlacementDAO{
 		em.remove(pl);
 		
 	}
-
+	
 	@Override
 	public void commitTrasaction() {
 		em.getTransaction().commit();

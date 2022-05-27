@@ -1,5 +1,8 @@
 package crudoperation.dao;
 
+//import java.util.List;
+
+
 import crudoperation.entities.Placement;
 
 public interface PlacementDAO {
@@ -8,6 +11,8 @@ public interface PlacementDAO {
 	void addPlacement(Placement pl);
 	void updatePlacement(Placement pl);
 	void removePlacement(Placement pl);
+	//public List<Placement> getAllBooks();
+	//public List<Placement> getStudentByMarks( double m);
 	void commitTrasaction();
 	void beginTrasaction();
 

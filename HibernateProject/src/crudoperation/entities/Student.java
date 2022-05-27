@@ -44,7 +44,7 @@ public class Student implements Serializable{
 	private int year;
 	
 	@Column(name="Hallticketno")
-	private long hallticketno;
+	private int hallticketno;
 	
 	@OneToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name="Certy_Id")
@@ -58,8 +58,7 @@ public class Student implements Serializable{
 		
 	}
 	public Student(int id, String name, double marks, String qualification, String course, int year,
-			long hallticketno,Certificate certificate) {
-		
+			int hallticketno,Certificate certificate,Collage collage) {
 		this.id = id;
 		this.name = name;
 		this.marks = marks;
@@ -68,6 +67,7 @@ public class Student implements Serializable{
 		this.year = year;
 		this.hallticketno = hallticketno;
 		this.certificate=certificate;
+		this.collage=collage;
 	}
 	public int getId() 
 	{
@@ -117,11 +117,11 @@ public class Student implements Serializable{
 	{
 		this.year = year;
 	}
-	public long getHallticketno() 
+	public int getHallticketno() 
 	{
 		return hallticketno;
 	}
-	public void setHallticketno(long hallticketno) 
+	public void setHallticketno(int hallticketno) 
 	{
 		this.hallticketno = hallticketno;
 	}

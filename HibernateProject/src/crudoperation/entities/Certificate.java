@@ -20,12 +20,12 @@ public class Certificate implements Serializable {
 	
 	@Id
 	@Column(name="certId")
-	private long certId;
+	private int certId;
 	
 	@Column(name="Year")
 	private int year;
 	
-	@OneToOne(mappedBy = "certificate")
+	@OneToOne(mappedBy = "certificate",orphanRemoval = true)
 	private Student student;
 	
 	
@@ -37,19 +37,19 @@ public class Certificate implements Serializable {
 		
 	}
 	
-	public Certificate(long certId, int year, Student student) {
-		
+	public Certificate(int certId, int year, Student student, Collage collage) {
 		this.certId = certId;
 		this.year = year;
 		this.student = student;
+		this.collage = collage;
 	}
 
-	public long getCertId() 
+	public int getCertId() 
 	{
 		return certId;
 	}
 
-	public void setCertId(long certId)
+	public void setCertId(int certId)
 	{
 		this.certId = certId;
 	}

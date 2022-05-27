@@ -2,10 +2,9 @@ package crudoperation.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -17,27 +16,28 @@ public class Admin implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private long id;
+	private int id;
 	private String name;
 	private String password;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="user_Id")
+	@OneToOne(mappedBy = "studentAdmin",orphanRemoval = true)
 	private User user;
+	
+	
 	public Admin() {
 		
 	}
-	public Admin(long id, String name, String password, User user) {
+	public Admin(int id, String name, String password, User user) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
-		this.user=user;
+		this.user = user;
 	}
-	public long getId() 
+	public int getId() 
 	{
 		return id;
 	}
-	public void setId(long id) 
+	public void setId(int id) 
 	{
 		this.id = id;
 	}
@@ -57,18 +57,17 @@ public class Admin implements Serializable{
 	{
 		this.password = password;
 	}
-	public User getUser() 
+	public User getUser()
 	{
 		return user;
 	}
+
 	public void setUser(User user) 
 	{
 		this.user = user;
 	}
-	
 	@Override
-	public String toString()
-	{
+	public String toString() {
 		return "Admin [id=" + id + ", name=" + name + ", password=" + password + ", user=" + user + "]";
 	}
 	

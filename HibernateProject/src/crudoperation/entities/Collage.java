@@ -17,49 +17,51 @@ public class Collage implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	private long id;
-	private User collageAdmin;
+	private int id;
 	private String collageName;
 	private String location;
 	
-	@OneToOne( mappedBy="User_Id")
+	
+	@OneToOne(mappedBy = "collage",orphanRemoval = true)
 	private User user;
 	
-	@OneToMany(mappedBy="collage")
+	
+	@OneToMany(mappedBy="collage",orphanRemoval = true)
 	private Set<Student> student;
 	
-	@OneToMany(mappedBy="collage")
+	
+	@OneToMany(mappedBy="collage",orphanRemoval = true)
 	private Set<Placement> placement;
 	
-	@OneToMany(mappedBy="collage")
+	
+	@OneToMany(mappedBy="collage",orphanRemoval = true)
 	private Set<Certificate> certificate;
+	
 	
 	public Collage() {
 	
 	}
-	public Collage(long id, User collageAdmin, String collageName, String location, User user) {
+	
+	public Collage(int id, String collageName, String location, User user, Set<Student> student,
+			Set<Placement> placement, Set<Certificate> certificate) {
 		this.id = id;
-		this.collageAdmin = collageAdmin;
 		this.collageName = collageName;
 		this.location = location;
-		this.user=user;
+		this.user = user;
+		this.student = student;
+		this.placement = placement;
+		this.certificate = certificate;
 	}
-	public long getId() 
+
+	public int getId() 
 	{
 		return id;
 	}
-	public void setId(long id)
+	public void setId(int id)
 	{
 		this.id = id;
 	}
-	public User getCollageAdmin() 
-	{
-		return collageAdmin;
-	}
-	public void setCollageAdmin(User collageAdmin) 
-	{
-		this.collageAdmin = collageAdmin;
-	}
+	
 	public String getCollageName()
 	{
 		return collageName;
@@ -75,6 +77,14 @@ public class Collage implements Serializable{
 	public void setLocation(String location) 
 	{
 		this.location = location;
+	}
+	
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 	
 	public Set<Student> getStudent() 
@@ -106,13 +116,14 @@ public class Collage implements Serializable{
 	{
 		this.certificate = certificate;
 	}
+	
 	@Override
-	public String toString() 
-	{
-		return "Collage [id=" + id + ", collageAdmin=" + collageAdmin + ", collageName=" + collageName + ", location="
+	public String toString() {
+		return "Collage [id=" + id + ", collageName=" + collageName + ", location="
 				+ location + ", user=" + user + ", student=" + student + ", placement=" + placement + ", certificate="
 				+ certificate + "]";
 	}
+	
 	
 	
 	
