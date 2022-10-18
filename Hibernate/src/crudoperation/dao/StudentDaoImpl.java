@@ -2,7 +2,7 @@ package crudoperation.dao;
 
 import javax.persistence.EntityManager;
 
-import crudoperation.entities.Student;
+import demo.crudoperation.entities.Student;
 
 
 public class StudentDaoImpl implements StudentDao {

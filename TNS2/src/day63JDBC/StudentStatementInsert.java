@@ -17,12 +17,14 @@ public class StudentStatementInsert {
 		p.put("password","Chetan@1234567");
 		Connection con= DriverManager.getConnection(url,p);
 		Statement st = con.createStatement();
-		String query = "insert into student value(1, 'Aniket' ,20.25 )";
+		String query = "update student2 SET studentName='Aniket' where studentId=2";
 		int i = st.executeUpdate(query);
-		boolean t = st.execute("insert into student value(2, 'Roshan' ,20 )");
-		System.out.println("no of rows affected"+i);
-		System.out.println("query executed"+t);
-		System.out.println("Row inserted successfully");
+		String query2 = "delete from student2 where studentId=2";
+		int j = st.executeUpdate(query2);
+		//boolean t = st.execute("insert into student2 value(2, 'Roshan' ,20 )");
+		System.out.println(" Updated"+i);
+		System.out.println("Delete executed"+j);
+		//System.out.println("Row inserted successfully");
 		st.close();
 		con.close();
 		

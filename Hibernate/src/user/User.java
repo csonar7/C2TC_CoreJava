@@ -1,8 +1,8 @@
 package user;
 
-import crudoperation.entities.Student;
-import crudoperation.service.StudentService;
-import crudoperation.service.StudentServiceImpl;
+import demo.crudoperation.entities.Student;
+import demo.crudoperation.service.StudentService;
+import demo.crudoperation.service.StudentServiceImpl;
 
 public class User {
 	
@@ -11,7 +11,7 @@ public class User {
 		StudentService service = new StudentServiceImpl();
 
 		Student student = new Student();
-		student.setName("Chetan");
+		/*student.setName("Chetan");
 		student.setMarks(25.32);
 		service.addStudent(student);
 		
@@ -30,7 +30,27 @@ public class User {
 		student4.setMarks(22.36);
 		service.addStudent(student4);
 		
-		System.out.println("Rows Inserted..");
+		System.out.println("Rows Inserted..");*/
+		
+		//Retrieve Operation
+		student =service.findStudentById(1);
+		System.out.println("Name:- "+student.getName());
+		System.out.println("ID:- "+student.getId());
+		
+	/*	//Update
+		student =service.findStudentById(4);
+		student.setName("Abhishek");
+		student.setMarks(41);
+		service.updateStudent(student);
+		
+		//delete
+		student =service.findStudentById(4);
+		System.out.println(student);
+		service.removeStudent(student);
+		System.out.println("Row Deleted..");
+		*/
+		
+		
 		
 	}
 

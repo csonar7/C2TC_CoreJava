@@ -30,18 +30,18 @@ public class Certificate implements Serializable {
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="Collage_ID")
-	private Collage collage;
+	@JoinColumn(name ="College_ID")
+	private College College;
 	
 	public Certificate() {
 		
 	}
 	
-	public Certificate(int certId, int year, Student student, Collage collage) {
+	public Certificate(int certId, int year, Student student, College College) {
 		this.certId = certId;
 		this.year = year;
 		this.student = student;
-		this.collage = collage;
+		this.College = College;
 	}
 
 	public int getCertId() 
@@ -75,19 +75,19 @@ public class Certificate implements Serializable {
 		this.student = student;
 	}
 
-	public Collage getCollage()
+	public College getCollege()
 	{
-		return collage;
+		return College;
 	}
-	public void setCollage(Collage collage)
+	public void setCollege(College College)
 	{
-		this.collage=collage;
+		this.College=College;
 	}
 
 	@Override
 	public String toString() 
 	{
-		return "Certificate [certId=" + certId + ", year=" + year + ", student=" + student + ", collage=" + collage
+		return "Certificate [certId=" + certId + ", year=" + year + ", student=" + student + ", College=" + College
 				+ "]";
 	}
 	

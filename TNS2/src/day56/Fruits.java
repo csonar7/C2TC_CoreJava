@@ -41,7 +41,7 @@ public class Fruits {
 	{
 		if(o instanceof Fruits)
 		{
-			return ((Fruits)o).type = this.type;
+			return ((Fruits)o).type == this.type;
 		}
 		return false;
 		

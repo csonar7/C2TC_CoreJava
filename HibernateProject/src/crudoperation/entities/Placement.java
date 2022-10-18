@@ -25,20 +25,20 @@ public class Placement implements Serializable{
 	private LocalDate date;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="Collage_ID")
-	private Collage collage;
+	@JoinColumn(name ="College_ID")
+	private College College;
 	
 	public Placement() {
 		
 	}
 	
-	public Placement(int placeId, String pname, String qualification, int year, LocalDate date,Collage collage) {
+	public Placement(int placeId, String pname, String qualification, int year, LocalDate date,College College) {
 		this.placeId = placeId;
 		this.pname = pname;
 		this.qualification = qualification;
 		this.year = year;
 		this.date = date;
-		this.collage=collage;
+		this.College=College;
 	}
 	public int getPlaceId() 
 	{
@@ -81,20 +81,20 @@ public class Placement implements Serializable{
 	{
 		this.date = date;
 	}
-	public Collage getCollage()
+	public College getCollege()
 	{
-		return collage;
+		return College;
 	}
-	public void setCollage(Collage collage)
+	public void setCollege(College College)
 	{
-		this.collage=collage;
+		this.College=College;
 	}
 
 	@Override
 	public String toString()
 	{
 		return "Placement [placeId=" + placeId + ", pname=" + pname + ", qualification=" + qualification + ", year="
-				+ year + ", date=" + date + ", collage=" + collage + "]";
+				+ year + ", date=" + date + ", College=" + College + "]";
 	}
 	
 

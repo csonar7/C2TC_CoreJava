@@ -1,6 +1,6 @@
 package crudoperation.dao;
 
-import crudoperation.entities.Student;
+import demo.crudoperation.entities.Student;
 
 public interface StudentDao {
 	public abstract Student getStudentById(int id);

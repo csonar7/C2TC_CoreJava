@@ -3,6 +3,7 @@ package com.Appplication;
 import com.framework.PrimeAcc;
 
 public class GSPrimeAcc extends PrimeAcc {
+	
 	private static final float charge=200.25f;
 	
 	public GSPrimeAcc()
@@ -21,7 +22,7 @@ public class GSPrimeAcc extends PrimeAcc {
 	@Override
 	public String toString() {
 	
-		return super.getAccName()+super.getAccName()+ super.getCharges()+ super.isPrime();
+		return super.getAccNO()+super.getAccName()+ super.getCharges()+ super.isPrime();
 	}
 	
 

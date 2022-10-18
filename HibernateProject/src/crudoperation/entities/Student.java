@@ -52,13 +52,13 @@ public class Student implements Serializable{
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name ="College_ID")
-	private Collage collage;
+	private College College;
 	
 	public Student() {
 		
 	}
 	public Student(int id, String name, double marks, String qualification, String course, int year,
-			int hallticketno,Certificate certificate,Collage collage) {
+			int hallticketno,Certificate certificate,College College) {
 		this.id = id;
 		this.name = name;
 		this.marks = marks;
@@ -67,7 +67,7 @@ public class Student implements Serializable{
 		this.year = year;
 		this.hallticketno = hallticketno;
 		this.certificate=certificate;
-		this.collage=collage;
+		this.College=College;
 	}
 	public int getId() 
 	{
@@ -133,13 +133,13 @@ public class Student implements Serializable{
 	{
 		this.certificate=certificate;
 	}
-	public Collage getCollage()
+	public College getCollege()
 	{
-		return collage;
+		return College;
 	}
-	public void setCollage(Collage collage)
+	public void setCollege(College College)
 	{
-		this.collage=collage;
+		this.College=College;
 	}
 	
 	
@@ -147,7 +147,7 @@ public class Student implements Serializable{
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", marks=" + marks + ", qualification=" + qualification
 				+ ", course=" + course + ", year=" + year + ", hallticketno=" + hallticketno + ", certificate="
-				+ certificate + ", collage=" + collage + "]";
+				+ certificate + ", College=" + College + "]";
 	}
 	
 	

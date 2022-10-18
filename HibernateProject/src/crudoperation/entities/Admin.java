@@ -66,6 +66,7 @@ public class Admin implements Serializable{
 	{
 		this.user = user;
 	}
+	
 	@Override
 	public String toString() {
 		return "Admin [id=" + id + ", name=" + name + ", password=" + password + ", user=" + user + "]";

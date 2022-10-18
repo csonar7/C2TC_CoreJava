@@ -32,19 +32,19 @@ public class User implements Serializable {
 	
 	@OneToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name="Clg_Id")
-	private Collage collage;
+	private College College;
 	
 	public User() {
 		
 	}
 	
-	public User(String type, int userId, String name, String password, Admin studentAdmin, Collage collage) {
+	public User(String type, int userId, String name, String password, Admin studentAdmin, College College) {
 		this.type = type;
 		this.userId = userId;
 		this.name = name;
 		this.password = password;
 		this.studentAdmin = studentAdmin;
-		this.collage = collage;
+		this.College = College;
 	}
 
 	public String getType() 
@@ -79,13 +79,13 @@ public class User implements Serializable {
 	{
 		this.password = password;
 	}
-	public Collage getCollage()
+	public College getCollege()
 	{
-		return collage;
+		return College;
 	}
-	public void setCollage(Collage collage)
+	public void setCollege(College College)
 	{
-		this.collage=collage;
+		this.College=College;
 	}
 	public Admin getStudentAdmin() 
 	{
@@ -100,7 +100,7 @@ public class User implements Serializable {
 	@Override
 	public String toString() {
 		return "User [type=" + type + ", userId=" + userId + ", name=" + name + ", password=" + password
-				+ ", studentAdmin=" + studentAdmin + ", collage=" + collage + "]";
+				+ ", studentAdmin=" + studentAdmin + ", College=" + College + "]";
 	}
 
 

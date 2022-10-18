@@ -2,7 +2,9 @@ package com.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.OptionalDouble;
 import java.util.Vector;
+import java.util.stream.Stream;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -22,14 +24,14 @@ public class BookDAOImpl implements BookDAO {
 
 	
 	public Book getBookById(int id) {
-		// TODO Auto-generated method stub
+		
 		Book book = em.find(Book.class, id);
 		return book;
 	}
 
 	
 	public List<Book> getBookByTitle(String title) {
-		// TODO Auto-generated method stub
+		
 		String s = "Select book from Book book where book.title LIKE :ptitle";
 		TypedQuery<Book> query = em.createQuery(s, Book.class);
 		query.setParameter("ptitle","%"+ title+ "%");
@@ -38,7 +40,7 @@ public class BookDAOImpl implements BookDAO {
 
 	
 	public Long getBookCount() {
-		// TODO Auto-generated method stub
+		
 		String s = "Select COUNT(book.id) from Book book";
 		TypedQuery<Long> query = em.createQuery(s,Long.class); 
 		Long count = query.getSingleResult();
@@ -47,7 +49,7 @@ public class BookDAOImpl implements BookDAO {
 	
 	
 	public List<Book> getAuthorBooks(String author) {
-		// TODO Auto-generated method stub
+		
 		String s = "Select book from Book book where book.author = :pAuthor";
 		TypedQuery<Book> query = em.createQuery(s, Book.class);
 		query.setParameter("pAuthor", author);
@@ -57,7 +59,7 @@ public class BookDAOImpl implements BookDAO {
 
 	
 	public List<Book> getAllBooks() {
-		// TODO Auto-generated method stub
+		
 		Query query = em.createNamedQuery("getAllBooks");
 		@SuppressWarnings("unchecked")
 		List<Book> bookList = query.getResultList();
@@ -66,33 +68,37 @@ public class BookDAOImpl implements BookDAO {
 
 	
 	public List<Book> getBooksInPriceRange(double low, double high) {
-		// TODO Auto-generated method stub
+		
 		String s = "Select book from Book book  where book.price between :low and :high";
 		TypedQuery<Book> query = em.createQuery(s, Book.class);
 		query.setParameter("low", low);
 		query.setParameter("high", high);
 		List<Book> bookList = query.getResultList();
+		Stream <Book> ss=bookList.stream();
+		OptionalDouble od=bookList.stream().filter((b) -> b.getPrice()<50).mapToDouble(Book::getPrice).average();
+		System.out.println("average"+od);
+		//bookList.contains(od);
 		return bookList;
 	}
 
 
 	@Override
 	public void commitTranscation() {
-		// TODO Auto-generated method stub
+		
 		em.getTransaction().commit();
 	}
 
 
 	@Override
 	public void beginTranscation() {
-		// TODO Auto-generated method stub
+		
 		em.getTransaction().begin();
 	}
 
 
 	@Override
 	public void addBook(Book book) {
-		// TODO Auto-generated method stub
+		
 		em.persist(book);
 	}
 

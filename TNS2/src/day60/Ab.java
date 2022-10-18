@@ -1,5 +1,5 @@
 package day60;
-
+/*
 public abstract class Ab {
 	
 	//abstract public void m1();
@@ -18,6 +18,21 @@ class Ab1 extends Ab{
 	Ab c =new Ab1();
 	//Ab1 m =new Ab();
 	public void m1()
+	{
+		
+	}
+}
+*/
+
+class a{
+	public void show()
+	{
+		System.out.println(".........");
+	}
+}
+class c extends a
+{
+	public void show()
 	{
 		
 	}

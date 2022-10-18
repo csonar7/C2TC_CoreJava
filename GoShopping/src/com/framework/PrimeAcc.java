@@ -37,7 +37,7 @@ public class PrimeAcc extends ShopAcc {
 
 	@Override
 	public String toString() {
-		return super.toString()+"PrimeAcc [isPrime=" + isPrime + "]";
+		return super.toString()+" PrimeAcc [isPrime= " + isPrime + "]";
 	}
 	
 	

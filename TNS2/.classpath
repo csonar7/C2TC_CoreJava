@@ -2,5 +2,7 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_321"/>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/C2CT_Core-Java/Hibernate-20220512T063716Z-001/Hibernate/mysql-connector-java-8.0.13.jar"/>
+	<classpathentry kind="lib" path="D:/C2CT_Core-Java/ojdbc8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

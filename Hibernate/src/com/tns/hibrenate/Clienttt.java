@@ -1,8 +1,8 @@
 package com.tns.hibrenate;
 
-import crudoperation.entities.Student;
-import crudoperation.service.StudentService;
-import crudoperation.service.StudentServiceImpl;
+import demo.crudoperation.entities.Student;
+import demo.crudoperation.service.StudentService;
+import demo.crudoperation.service.StudentServiceImpl;
 
 public class Clienttt {
 	public static void main(String[] args) {
